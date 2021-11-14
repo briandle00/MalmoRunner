@@ -7,7 +7,7 @@ Our agent's environment is set up as a survival course in Minecraft using the Ma
 
 
 ## Approach:
-We are experimenting with two different Reinforcement algorithms. We have started with Proximal Policy Optimization(PPO) algorithm. PPO is an on-policy algorithm and is an easy method to implement and tune. We are planning to experiment with DQN which is based on Q network if we end up having some time in the end.
+We are experimenting with two different Reinforcement algorithms. We have started with Proximal Policy Optimization(PPO) algorithm. PPO is an on-policy algorithm and is an easy method to implement and tune.
 
 In our first method We are adding an immediate view of the grid and agent's health bar to the Observation space in our algorithm. This includes magma tiles, food items, start and end blocks if they are in the immediate view of the agent. Small Negative Rewards are given for every step the agent takes and the status of it's health bar being less than 100 percent. Big Positive rewards are given when reaching the end block. Currently we are training with the default parameters of the PPO function in Rllib library. We will be tuning the parameter after our first successful run.
 Our current Algorithm:
@@ -15,10 +15,12 @@ Our current Algorithm:
 
 
 ## Evaluation
-
+As we train we are using a log_returns function to log the reward progress of the agent with every step. We are hoping to see an upward graph as the agent trains.
+As Qualitive Evaluation we are monitoring the Agent's progress on the screen hoping to see it successfully make the correct decisions.
 
 ## Remaining Goals and Challenges:
-Currently we are working with Discrete movement If successful at training the agent we would love to work with Continuous Movement. At this moment we are using the default settings for the PPO function. We would love to experiment with a different learning rate and tuning other parameters as well.
+One of our biggest challenges has been system incompatibility and slow running time on some of team memebers devices. This makes experimenting, training and building the enviroment more challenging.
+Currently we are working with Discrete movement If successful at training we would love to work with Continuous Movement. At this moment we are using the default settings for the PPO function. We would love to experiment with a different learning rate and tuning other parameters as well. We are planning to also experiment with DQN which is based on Q network given we have extra time.
 
 ## Resources Used:
 https://openai.com/blog/openai-baselines-ppo/

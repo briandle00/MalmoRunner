@@ -10,10 +10,6 @@ Our agent's environment is set up as a survival course in Minecraft using the Ma
 ## AI/ML Algorithms
 We are experimenting with two different Reinforcement algorithms. We have started with Proximal Policy Optimization(PPO) algorithm. PPO is an on-policy algorithm and is an easy method to implement and tune. We are planning to experiment with DQN which is based on Q network if we end up having some time in the end.
 
-In our first method We are adding an immediate view of the grid and agent's health bar to the Observation space in our algorithm. This includes magma tiles, food items, start and end blocks if they are in the immediate view of the agent. Small Negative Rewards are given for every step the agent takes and the status of it's health bar being less than 100 percent. Big Positive rewards are given when reaching the end block. Currently we are training with the default parameters of the PPO function in Rllib library. We will be tuning the parameter after our first successful run.
-Our current Algorithm:
-<img width="741" alt="Screen Shot 2021-11-14 at 12 05 54 PM" src="https://user-images.githubusercontent.com/62405418/141696775-10b495b7-5775-4ac9-bf58-fd4caa95cdd0.png">
-
 
 ## Evaluation Plan
 For quantitative evaluation, we will focus on time taken to get to the end of the maze. To measure this time quickly, we will apply a negative reward over time effect to the agent. We can take note of the accuracy of its choices to plot or view. The baseline would be to surpass a 50% success rate when picking between every pair of given food items. We hope to have the agent collect the right food item about 75% of the time and taking the shortest path to the end of the maze by the end of the training.

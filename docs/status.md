@@ -25,6 +25,7 @@ One of our biggest challenges has been system incompatibility and slow running t
 Currently we are working with Discrete movement If successful at training we would love to work with Continuous Movement. At this moment we are using the default settings for the PPO function. We would love to experiment with a different learning rate and tuning other parameters as well. We are planning to also experiment with DQN which is based on Q network given we have extra time.
 
 ## Resources Used:
-<a href=”http://cenay.cnusp.hop.clickbank.net”><img src=”https://openai.com/blog/openai-baselines-ppo/” width=”125″ height=”12″ /></a>
-<a href=”http://cenay.cnusp.hop.clickbank.net”><img src=”https://spinningup.openai.com/en/latest/algorithms/ppo.html” width=”125″ height=”12″ /></a>
-<a href=”http://cenay.cnusp.hop.clickbank.net”><img src=”https://medium.datadriveninvestor.com/which-reinforcement-learning-rl-algorithm-to-use-where-when-and-in-what-scenario-e3e7617fb0b1” width=”125″ height=”12″ /></a>
+<a Resource1: ” target=”_blank”><strong> https://openai.com/blog/openai-baselines-ppo/</strong></a> 
+<a Resource2: ” target=”_blank”><strong> https://spinningup.openai.com/en/latest/algorithms/ppo.html</strong></a> 
+<a Resource3: ” target=”_blank”><strong> https://medium.datadriveninvestor.com/which-reinforcement-learning-rl-algorithm-to-use-where-when-and-in-what-scenario-e3e7617fb0b1</strong></a> 
+

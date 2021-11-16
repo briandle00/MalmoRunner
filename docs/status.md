@@ -13,6 +13,8 @@ We are experimenting with two different Reinforcement algorithms. We have starte
 
 In our first method We are adding an immediate view of the grid and agent's health bar to the Observation space in our algorithm. This includes magma tiles, food items, start and end blocks if they are in the immediate view of the agent. Small Negative Rewards are given for every step the agent takes and the status of it's health bar being less than 100 percent. Big Positive rewards are given when reaching the end block. Currently we are training with the default parameters of the PPO function in Rllib library. We will be tuning the parameter after our first successful run.
 Our current Algorithm:
+
+
 <img width="741" alt="Screen Shot 2021-11-14 at 12 05 54 PM" src="https://user-images.githubusercontent.com/62405418/141696775-10b495b7-5775-4ac9-bf58-fd4caa95cdd0.png">
 
 

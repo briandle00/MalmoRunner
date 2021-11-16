@@ -28,4 +28,3 @@ Currently we are working with Discrete movement If successful at training we wou
 <a href=”http://cenay.cnusp.hop.clickbank.net”><img src=”https://openai.com/blog/openai-baselines-ppo/” width=”125″ height=”12″ /></a>
 <a href=”http://cenay.cnusp.hop.clickbank.net”><img src=”https://spinningup.openai.com/en/latest/algorithms/ppo.html” width=”125″ height=”12″ /></a>
 <a href=”http://cenay.cnusp.hop.clickbank.net”><img src=”https://medium.datadriveninvestor.com/which-reinforcement-learning-rl-algorithm-to-use-where-when-and-in-what-scenario-e3e7617fb0b1” width=”125″ height=”12″ /></a>
-

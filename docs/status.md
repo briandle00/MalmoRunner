@@ -15,6 +15,7 @@ In our first method We are adding an immediate view of the grid and agent's heal
 Our current Algorithm:
 
 
+
 <img width="741" alt="Screen Shot 2021-11-14 at 12 05 54 PM" src="https://user-images.githubusercontent.com/62405418/141696775-10b495b7-5775-4ac9-bf58-fd4caa95cdd0.png">
 
 

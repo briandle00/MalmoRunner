@@ -2,6 +2,8 @@
 layout: default
 title:  Status
 ---
+<iframe width="560" height="315" src="https://www.youtube.com/embed/znTW1nh2T-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Summary
 Our agent's environment is set up as a survival course in Minecraft using the Malmo platform with a start point and end point. Agent learns how to navigate a maze which is covered with many magma tiles and food items. There are many food items distributed in the maze available for collection and consumption. Some our poisonous and some add health. We want our agent to be able to learn saturation values of various food items available to it. This is a hidden value that determines how long a food is able to keep a player full for, even beyond the regular displayed hunger bar. Our end goal for the agent is to be able to navigate the fastest path to the end in full health.
 

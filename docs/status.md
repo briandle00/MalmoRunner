@@ -22,6 +22,8 @@ As Qualitive Evaluation we are monitoring the Agent's progress on the screen hop
 
 Here is the result from the log:<br />
 ![alt text](https://github.com/briandle00/MalmoRunner/blob/1b2b22cbbdf7db4d229b1aa46f6ee289a2e19d4e/docs/returns_project.png?raw=true)
+<br />
+As you can see from the log results, as the number of steps increase you can see a gradual increase in the reward. Although the log images shows that the rewards are a little irratic, the rewards still gradually move upwards in the log with the increase in number of steps. This result was achieved by running the Agent in minecraft for 2 hours. RUnning it for more time and consequently for more steps, we will see a gradual increase in the rewards as well. With the current results, I expect the rewards to steadily go above and venture into positive reward space after about 50000 steps. Since the observation space is 101 for each obsrvation that is made, the run time is long for each step. But running it for longer time will provide promising results and hopefully the agent is able to complete the maze and also evealuate which food item is better for its health.
 
 
 ## Remaining Goals and Challenges:

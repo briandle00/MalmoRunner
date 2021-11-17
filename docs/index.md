@@ -3,38 +3,18 @@ layout: default
 title:  Home
 ---
 
-Source code: https://github.com/USER/PROJECT (_fix this_)
+Source code: https://github.com/mahsa7haft/MalmoRunner.git (_fix this_)
 
-Reports:
+Welcome to our Malmo Runner Project
+
+Steve needs to get to the end of a deadly maze. On his way over there are many magma and stone tiles and a scatter of healthy and poisonous food. Using Reinforcement learning Steve will train how to get to the end of the maze by consuming the right kind of food and taking the smallest steps.
+
+
+
+To learn more about our Project see:
 
 - [Proposal](proposal.html)
 - [Status](status.html)
 - [Final](final.html)
 
-What's Markdown (`.md`)?
 
-Markdown is markup that lets you write hypertext (HTML) documents
-in easy-to-read and easy-to-write plain text.
-No angle brackets `<></>` required for
-paragraphs, lists, blockquotes, tables, etc.
-
-
-This is a paragraph (in Markdown). Some more
-text here.
-
-This is another paragraph.
-
-This is a list:
-
-- Orange
-- Apple
-- Blueberry
-
-$$x^2 = y^2$$
-
-
-Just getting started with Markdown?
-See the [HTML <-> Markdown Quick Reference (Cheat Sheet)][quickref].
-
-
-[quickref]: https://github.com/mundimark/quickrefs/blob/master/HTML.md

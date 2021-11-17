@@ -3,7 +3,7 @@ layout: default
 title:  Home
 ---
 
-Source code: https://github.com/mahsa7haft/MalmoRunner.git (_fix this_)
+Source code: https://github.com/mahsa7haft/MalmoRunner.git
 
 Welcome to our Malmo Runner Project
 

@@ -3,13 +3,14 @@ layout: default
 title:  Home
 ---
 
-Source code: https://github.com/mahsa7haft/MalmoRunner.git
+Source code: 
+https://github.com/mahsa7haft/MalmoRunner.git (_fix this_)
 
 Welcome to our Malmo Runner Project
 
-Steve needs to get to the end of a deadly maze. On his way over there are many magma and stone tiles and a scatter of healthy and poisonous food. Using Reinforcement learning Steve will train how to get to the end of the maze by consuming the right kind of food and taking the smallest steps.
+We used Mincraft to train an agent using Reinforcement learning. Our agent navigates a maze fighting for his survival. On his way a maze covered with Stone and magma tiles. There are fruits here and there, some poisonous and some healthy. By the end of our training Steven can solve the maze taking the shortest number of steps to the blue block while keeping his health up by eating the right kind of food.
 
-
+<img width="803" alt="Screenshot 2021-11-16 at 20 18 22" src="https://user-images.githubusercontent.com/62405418/142134071-d457fac7-61c9-42c7-9cb7-ce8b3c27bec9.png">
 
 To learn more about our Project see:
 

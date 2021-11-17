@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
+## Brian
 ***UCI Net ID***: briandl1
 
-## USER 2
+## Mahsa Clinton
 ***UCI Net ID***: mahsak
 
-## USER 3
+## Malhar Mane
 ***UCI Net ID***: mmane

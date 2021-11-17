@@ -20,7 +20,7 @@ In our first method We are adding an immediate view of the grid and agent's heal
 As we train we are using a log_returns function to log the reward progress of the agent with every step. We are hoping to see an upward graph as the agent trains.
 As Qualitive Evaluation we are monitoring the Agent's progress on the screen hoping to see it successfully make the correct decisions.
 
-Here is the result from the log:\n
+Here is the result from the log:<br />
 ![alt text](https://github.com/briandle00/MalmoRunner/blob/1b2b22cbbdf7db4d229b1aa46f6ee289a2e19d4e/docs/returns_project.png?raw=true)
 
 

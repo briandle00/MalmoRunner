@@ -3,7 +3,7 @@ layout: default
 title:  Home
 ---
 
-Welcome to our Malmo Runner Project
+<strong>Welcome to our Malmo Runner Project<strong>
 
 We used Mincraft to train an agent using Reinforcement learning. Our agent navigates a maze fighting for his survival. On his way, a maze covered with Stone and magma tiles. There are fruits here and there, some poisonous and some healthy. By the end of our training Steven can solve the maze taking the shortest number of steps to the blue block while keeping his health up by eating the right kind of food.
 

@@ -15,7 +15,50 @@ We believed this challenge would be interesting because the benefit from food is
 
 ### Baseline
 
+As a sanity check, we started the agent off with just discrete actions, no food, and just a plain with an end block. We slowly added in items to its environment, eventually leading to magma blocks as "walls", stone for the ground, and glass and bedrock for item spawning.
+
+We used the maze decorator included in Malmo in order to generate mazes. The maze was also sunken into the ground by one block; because the agent does not having jumping in his action space, this prevents it from going out of bounds. To generate the randomly placed items, pseudocode follows.
+
+```
+x = array of random int between 0 and length of maze
+z = array of random int between 0 and width of maze
+for i in range(chosen number of golden apples):
+  add golden apple to field at x[i], z[i], and y=one block above surface
+  add glass block to field at x[i], z[i], and y=surface level
+  
+x = array of random int between 0 and length of maze
+z = array of random int between 0 and width of maze
+for i in range(chosen number of spider eyes):
+  add spider eye to field at x[i], z[i], and y=one block above surface
+  add bedrock to field at x[i], z[i], and y=surface level
+```
+
+The final step was to move to a continous action space in order to enable the agent to eat the food that it is picking up. Eating food does not work with discrete actions in Malmo.
+
 ### Proposed Approach
+
+We decided to initially tune our rewards to satisfactory performance while using unchanged default parameters for the PPO algorithm. The Proximal Policy Optimization (PPO) algorithm is described below.
+
+![image](https://user-images.githubusercontent.com/50087239/144312978-29d792f6-f82e-4b00-968a-05257fa069bc.png)
+
+PPO is an on-policy algorithm and is an easy method to implement and tune.
+
+Xiao-Yang Liu, Leader of the deep learning library ElegantRL, describes PPO as follows:
+
+![image](https://user-images.githubusercontent.com/50087239/144314449-9b43e3db-ebf1-4044-9c5f-abc850f6eb33.png)
+```
+(PPO) follows a classic Actor-Critic framework with four components:
+Initialization: initializes the related attributes and networks.
+Exploring: explores transitions through the interaction between the Actor-network and the environment.
+Computing: computes the related variables, such as the ratio term, exact reward, and estimate advantage.
+Updating: updates the Actor and Critic networks based on the loss function and objective function.
+```
+
+We will be tuning the following parameters:
+- Learning Rate: Self explanatory. This controls how fast the agent will learn during each episode.
+- Gamma: A constant known as a discount factor. This allows us to tune how much future states are weighed while the agent is learning. Reaching the end block in the future should be _discounted_ compared to reaching the end block immediately.
+
+We are added immediate view of the grid and agent's health bar to the observation space in our algorithm. This includes magma tiles, food items, and start and end blocks (if they are in the immediate view of the agent). Small negative rewards are given for every step the agent takes. Big positive rewards are given when reaching the end block (a diamond block). Our maze is located in a plain of stone. We tuned the rewards in order to encourage exploration while still encouraging the agent to take more efficient paths towards its destinations, and additionally we wanted to allow it to take some damage to create even shorter paths, but it must heal using golden apples in order to do so effectively.
 
 ## Evaluation
 
@@ -28,3 +71,6 @@ After a lot of training, the agent does seem to be more careful with its movemen
 ### Quantitative
 
 ## References
+https://towardsdatascience.com/elegantrl-mastering-the-ppo-algorithm-part-i-9f36bc47b791
+https://towardsdatascience.com/proximal-policy-optimization-tutorial-part-2-2-gae-and-ppo-loss-fe1b3c5549e8
+- We used these blog posts to learn about the higher level concepts of PPO and about the parameters we would eventually be tuning for it (gamma and learning rate).

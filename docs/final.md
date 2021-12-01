@@ -43,7 +43,7 @@ We decided to initially tune our rewards to satisfactory performance while using
 
 PPO is an on-policy algorithm and is an easy method to implement and tune.
 
-Xiao-Yang Liu, Leader of the deep learning library ElegantRL, describes PPO as follows:
+Xiao-Yang Liu, PhD from Columbia University and lead of the deep learning library ElegantRL, describes PPO as follows:
 
 ![image](https://user-images.githubusercontent.com/50087239/144314449-9b43e3db-ebf1-4044-9c5f-abc850f6eb33.png)
 ```
@@ -60,9 +60,17 @@ We will be tuning the following parameters:
 
 We are added immediate view of the grid and agent's health bar to the observation space in our algorithm. This includes magma tiles, food items, and start and end blocks (if they are in the immediate view of the agent). Small negative rewards are given for every step the agent takes. Big positive rewards are given when reaching the end block (a diamond block). Our maze is located in a plain of stone. We tuned the rewards in order to encourage exploration while still encouraging the agent to take more efficient paths towards its destinations, and additionally we wanted to allow it to take some damage to create even shorter paths, but it must heal using golden apples in order to do so effectively.
 
+Initially, we were going to also test out Deep Q-Networkm (DQN), another reinforcement learning algorithm, as well, but we decided to funnel our efforts into having PPO's performance be improved due to limited time. During our research, we saw that PPO can converge faster, allowing for us to test quicker. Additionally, DQN usually relies on other additional algorithms in order to reach good performance, thus we were unsure if it was worth our time when we could spend more time increasing the current working performance we had.
+
+Pseudocode for DQN is as follows.
+
+![image](https://user-images.githubusercontent.com/50087239/144315600-127607a7-690f-4d06-a2c3-c87416bb80a6.png)
+
 ## Evaluation
 
 ### Qualitative
+
+We watched the agent train live and also recorded some video to look back on in order to evaluate its qualitative performance.
 
 Unfortunately, even after several hours of training, the agent never truly discerns the difference between the food items. They are eaten arbitrarily, but perhaps with more training time it could eventually learn to eat golden apples and to avoid spider eyes. A bug in the current version of Malmo could have lead to the poor performance in food selection. We originally wanted to punish the agent only for dying, but not for touching magma blocks. This would mean that it is completely free to explore on top of magma blocks as long as it has the resources (golden apples) to do so. Unfortunately, rewards on death are currently not working, and thus we had to punish it only for timeouts and for touching magma. This further increases the gap between action and reward when the numerical reward value is coming from slightly inaccurate places.
 
@@ -70,7 +78,26 @@ After a lot of training, the agent does seem to be more careful with its movemen
 
 ### Quantitative
 
+As we trained, we used a function to log the rewards progress of the agent with every step, creating a graph for us to view over time. We hoped to see an upward trend in the graph as the agent trains.
+
+Our first sanity check had an interesting issue. The agent learned that it was able to reset the map by going out of bounds without any punishment, and thus actually trained itself to immediately turn around and reset the map in order to avoid negative rewards from exploring and from dying. This is why the following rewards graph trends towards 0 while never reaching positive values:
+
+![returns](https://user-images.githubusercontent.com/50087239/144315277-96df7dde-3a7f-4495-b04f-a6ad7be9ef32.png)
+
+In order to fix this, we added walls to the maze. While the agent is still able to technically try to walk into the wall, we thought it would eventually learn that it is a waste of actions to try to walk into the wall, and thus train itself to stop over time anyways. This was simpler than reducing its action space when close to a wall, especially when thinking about the eventual goal of continuous actions. Unfortunately, a new issue was introduced over time. The agent learned to explore only a little bit to search for the end block. If it found it quickly, it would run to it, but if not, it would kill itself promptly. This is likely because we had an overly high negative reward on every step, discouraging exploration. However, its graph still trended upward with this goal in mind, with every spike representing one or more successful maze finishes.
+
+![returns](https://user-images.githubusercontent.com/50087239/144316254-7622cc8a-9285-4e79-9794-0f80964ef7b5.png)
+
+After allowing it to explore, we ran into one final issue before moving onto continuous actions. Now that the agent was encouraged to explore, it would sometimes simply get stuck in an infinite loop of walking in a circle if it could not find a diamond block relatively quickly. We theorized that this is because the agent learned that the diamond block has a high enough reward to search for, but its navigation skills were not adequate to explore the full maze safely. Thus, instead of taking a negative reward from dying, it simply chose to walk in circles infinitely. We solved this issue by simply adding a timeout of 30 seconds, with a negative reward equivalent to dying. The following is our final graph using discrete actions after these fixes were deployed.
+
+![returns](https://user-images.githubusercontent.com/50087239/144316576-1aee542a-0b8a-4316-ae2c-eb2e49bd1c2c.png)
+
+
+
 ## References
 https://towardsdatascience.com/elegantrl-mastering-the-ppo-algorithm-part-i-9f36bc47b791
 https://towardsdatascience.com/proximal-policy-optimization-tutorial-part-2-2-gae-and-ppo-loss-fe1b3c5549e8
 - We used these blog posts to learn about the higher level concepts of PPO and about the parameters we would eventually be tuning for it (gamma and learning rate).
+- 
+https://medium.datadriveninvestor.com/which-reinforcement-learning-rl-algorithm-to-use-where-when-and-in-what-scenario-e3e7617fb0b1
+- We used this blog post to learn about the difference between various reinforcement learning algorithms.

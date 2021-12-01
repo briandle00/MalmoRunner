@@ -92,7 +92,11 @@ After allowing it to explore, we ran into one final issue before moving onto con
 
 ![returns](https://user-images.githubusercontent.com/50087239/144316576-1aee542a-0b8a-4316-ae2c-eb2e49bd1c2c.png)
 
+Finally, we moved on to continuous actions. Due to the way actions are implemented in Malmo, this was the first time we were able to actually allow the agent to eat. To accomodate for this, we also had to add hotbar item selection to its action space. Finally, because Minecraft agents are unable to eat food until their hunger bar is depleted, we gave the agent a starvation debuff upon every new maze. This has an additional effect of disallowing passive healing unless the agent eats a golden apple, which siginificantly increases the difficulty of reaching a diamond block. However, we actually had very good performance with continuous actions due to how aggressively the agent would explore. It would find end blocks very quickly, but it would not learn to consistently pick the correct foods. The following is a graph of the agent's rewards over time using continuous actions, including hotbar selection and eating, but without any changed parameters from the default of PPO.
 
+![returns](https://user-images.githubusercontent.com/50087239/144317046-29499614-5be6-4d4e-a249-7461264b2dbb.png)
+
+The final step we took was to run the agent with a Gamma value of 0.9 and a Learning Rate of 0.001. We arrived at these numbers after manually testing a couple of combinations of parameters for PPO. We would have liked to tune these numbers automatically, but we ran into some issues running that automation with the Ray library. The following was our final resulting rewards graph.
 
 ## References
 https://towardsdatascience.com/elegantrl-mastering-the-ppo-algorithm-part-i-9f36bc47b791

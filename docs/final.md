@@ -60,6 +60,8 @@ We will be tuning the following parameters:
 
 We are added immediate view of the grid,agent's health bar, and the agent's hotbar items (not full inventory) to the observation space in our algorithm. This includes magma tiles, food items, and start and end blocks (if they are in the immediate view of the agent). Due to some issues with the Malmo representation of entities, we were unable to have the agent see the true items on the ground. Instead, we spawned them on unique blocks so that the agent could make associations that it would be able to pick up items by walking on certain blocks, in combination with its hotbar slots. Small negative rewards are given for every step the agent takes. Big positive rewards are given when reaching the end block (a diamond block). Our maze is located in a plain of stone. We tuned the rewards in order to encourage exploration while still encouraging the agent to take more efficient paths towards its destinations, and additionally we wanted to allow it to take some damage to create even shorter paths, but it must heal using golden apples in order to do so effectively.
 
+### Alternative Approach, Pros and Cons
+
 Initially, we were going to also test out Deep Q-Network (DQN), another reinforcement learning algorithm, as well, but we decided to funnel our efforts into having PPO's performance be improved due to limited time. During our research, we saw that PPO can converge faster, allowing for us to test quicker. Additionally, DQN usually relies on other additional algorithms in order to reach good performance, thus we were unsure if it was worth our time when we could spend more time increasing the current working performance we had.
 
 Pseudocode for DQN is as follows.

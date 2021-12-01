@@ -102,6 +102,6 @@ The final step we took was to run the agent with a Gamma value of 0.9 and a Lear
 https://towardsdatascience.com/elegantrl-mastering-the-ppo-algorithm-part-i-9f36bc47b791
 https://towardsdatascience.com/proximal-policy-optimization-tutorial-part-2-2-gae-and-ppo-loss-fe1b3c5549e8
 - We used these blog posts to learn about the higher level concepts of PPO and about the parameters we would eventually be tuning for it (gamma and learning rate).
-- 
+
 https://medium.datadriveninvestor.com/which-reinforcement-learning-rl-algorithm-to-use-where-when-and-in-what-scenario-e3e7617fb0b1
 - We used this blog post to learn about the difference between various reinforcement learning algorithms.

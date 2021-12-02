@@ -7,8 +7,6 @@ title: Final Report
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/4nK55kUSjhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/znTW1nh2T-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## Project Summary
 
 Our agent's environment is set up as a survival course in Minecraft using the Malmo platform with a start point and end point. The agent learns to navigate this maze filled with magma, a healing item (golden apples), and a poisonous item (spider eyes). These food items are distributed throughout the maze to be collected and consumed. Because the agent only takes damage-over-time from touching magma instead of dying and resetting instantly, we hoped that we could train the agent to both safely navigate the maze and heal itself after making mistakes, all while avoiding poisoning itself. Our end goal would be to have the agent navigate the maze to the end point with full health.

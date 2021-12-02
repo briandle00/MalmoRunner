@@ -76,7 +76,7 @@ Pseudocode for DQN is as follows.
 
 We watched the agent train live and also recorded some video to look back on in order to evaluate its qualitative performance.
 
-Unfortunately, even after several hours of training, the agent never truly discerns the difference between the food items. They are eaten arbitrarily, but perhaps with more training time it could eventually learn to eat golden apples and to avoid spider eyes. A bug in the current version of Malmo could have lead to the poor performance in food selection. We originally wanted to punish the agent only for dying, but not for touching magma blocks. This would mean that it is completely free to explore on top of magma blocks as long as it has the resources (golden apples) to do so. Unfortunately, rewards on death are currently not working, and thus we had to punish it only for timeouts and for touching magma. This further increases the gap between action and reward when the numerical reward value is coming from slightly inaccurate places.
+
 
 After a lot of training, the agent does seem to be more careful with its movement than at the start. When the agent is first launched and training begins, its movement is extremely erratic as it simply tries out all of its available inputs. However, as time goes on, it does seem to make less extraneous inputs if it sees a diamond block (end goal for the maze). This is likely a result of its light punishment for every input it makes. However, given a different punishment value for inputs, this movement could have been even more refined or perhaps just stuck in a loop. Early iterations of the agent, especially before a time limit was added, would sometimes get stuck in an infinite loop as it decides to never explore and simply stay alive in one place. We found that reducing the punishment for each step significantly increased the rate at which the agent was willing to explore.
 
@@ -101,6 +101,10 @@ Finally, we moved on to continuous actions. Due to the way actions are implement
 ![returns](https://user-images.githubusercontent.com/50087239/144317046-29499614-5be6-4d4e-a249-7461264b2dbb.png)
 
 The final step we took was to run the agent with a Gamma value of 0.9 and a Learning Rate of 0.001. We arrived at these numbers after manually testing a couple of combinations of parameters for PPO. We would have liked to tune these numbers automatically, but we ran into some issues running that automation with the Ray library. The following was our final resulting rewards graph.
+
+![returns](https://user-images.githubusercontent.com/50087239/144509820-3aaa3960-a52a-4815-8366-947b114508c0.png)
+
+In the end it was difficult to observe much long term improvement for the agent's ability to navigate its environment, but it did have notable success in choosing between what food to eat, as shown and described in both the demonstration video and in the qualitative results section.
 
 ## References
 https://towardsdatascience.com/elegantrl-mastering-the-ppo-algorithm-part-i-9f36bc47b791

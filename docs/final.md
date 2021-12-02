@@ -33,6 +33,8 @@ for i in range(chosen number of spider eyes):
   add bedrock to field at x[i], z[i], and y=surface level
 ```
 
+Because Malmo generates these added blocks after it creates a maze using a MazeDecorator, we also decided to always create a second diamond block on the field. This causes there to occasionally be two end blocks, but we decided this is better than occasionally having no end block at all for the agent. If there is no end block at all, it would be a bit discouraged from exploring if it doesn't immediately see a diamond block.
+
 The final step was to move to a continous action space in order to enable the agent to eat the food that it is picking up. Eating food does not work with discrete actions in Malmo.
 
 ### Proposed Approach

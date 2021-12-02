@@ -5,6 +5,8 @@ title: Final Report
 
 ## Video
 
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/4nK55kUSjhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Project Summary
 
 Our agent's environment is set up as a survival course in Minecraft using the Malmo platform with a start point and end point. The agent learns to navigate this maze filled with magma, a healing item (golden apples), and a poisonous item (spider eyes). These food items are distributed throughout the maze to be collected and consumed. Because the agent only takes damage-over-time from touching magma instead of dying and resetting instantly, we hoped that we could train the agent to both safely navigate the maze and heal itself after making mistakes, all while avoiding poisoning itself. Our end goal would be to have the agent navigate the maze to the end point with full health.
@@ -104,7 +106,7 @@ The final step we took was to run the agent with a Gamma value of 0.9 and a Lear
 
 ![returns](https://user-images.githubusercontent.com/50087239/144509820-3aaa3960-a52a-4815-8366-947b114508c0.png)
 
-In the end it was difficult to observe much long term improvement for the agent's ability to navigate its environment, but it did have notable success in choosing between what food to eat. Without actually directly giving any rewards for foods eaten, we noticed that after several tens of thousands of trials, the agent is able to successfully pick the golden apple to eat when it requires healing most of the time. By taking random sample video and counting what food it eats manually, we were able to notice that golden apples are chosen about 85% of the time or higher, and the agent only chooses to eat spider eyes the remaining 15% of the time or lower. These random samples taken towards the end of the run are a good representation of the final result of the agent before it stopped training.
+In the end it was difficult to observe much long term improvement for the agent's ability to navigate its environment, but it did have notable success in choosing between what food to eat. Without actually directly giving any rewards for foods eaten, we noticed that after several tens of thousands of trials, the agent is able to successfully pick the golden apple to eat when it requires healing most of the time. By taking random sample video and counting what food it eats manually, we were able to notice that golden apples are chosen about 85% of the time or higher, and the agent only chooses to eat spider eyes the remaining 15% of the time or lower. These random samples taken towards the end of the run are an accurate representation of the final result of the agent before it stopped training.
 
 ## References
 https://towardsdatascience.com/elegantrl-mastering-the-ppo-algorithm-part-i-9f36bc47b791

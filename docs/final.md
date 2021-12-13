@@ -49,7 +49,6 @@ PPO is an on-policy algorithm and is an easy method to implement and tune.
 
 Xiao-Yang Liu, PhD from Columbia University and lead of the deep learning library ElegantRL, describes PPO as follows:
 
-![image](https://user-images.githubusercontent.com/50087239/144314449-9b43e3db-ebf1-4044-9c5f-abc850f6eb33.png)
 ```
 (PPO) follows a classic Actor-Critic framework with four components:
 Initialization: initializes the related attributes and networks.
